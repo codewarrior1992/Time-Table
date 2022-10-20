@@ -1,0 +1,67 @@
+header {
+  background: transparent;
+  z-index: 10;
+  transition: 0.3s all ease;
+  position: fixed;
+  width: 100%;
+  &.active {
+    background-color: rgba(2, 11, 18, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 0 10px rgb(4 7 14 / 80%);
+  }
+  @include xs {
+  }
+  @include sm {
+    width: 100%;
+  }
+  nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60px;
+    @include md {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    span.toggle {
+      position: absolute;
+      top: 18px;
+      left: 16px;
+      color: $white;
+      @include md {
+        display: none;
+      }
+    }
+    .logo {
+      margin: 0 auto;
+      @include sm {
+        margin: 0;
+      }
+    }
+    img {
+      object-fit: cover;
+      width: 260px;
+      height: 45px;
+    }
+    ul.main-panel {
+      display: none;
+      @include sm {
+        display: flex;
+        height: 100%;
+        position: relative;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+      a {
+        color: $white;
+        display: inline-flex;
+        padding: 16px;
+        font-weight: bold;
+        font-size: 20px;
+        width: 100%;
+      }
+    }
+  }
+}

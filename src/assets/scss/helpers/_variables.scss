@@ -1,0 +1,21 @@
+$primary: #2c394b;
+$danger: #ff4c29;
+$secondary: #72777e;
+$white: #fff;
+
+.router-link-exact-active {
+  color: $danger;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  @include md {
+    padding: 0 32px;
+  }
+  @include xl {
+    padding: 0 72px;
+    max-width: 1280px;
+  }
+}
