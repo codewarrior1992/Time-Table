@@ -1,0 +1,19 @@
+今日未營運 unavailable
+color: #3b3b3b;
+background-color: #bbb;
+
+尚未發車 await
+color: #876300;
+background-color: #f3e3c1;
+
+末班車已過 passed
+color: #c403eb;
+background-color: #d0b1d6;
+
+進站中 pulling in
+color: #f72900;
+background-color: #ffd8d0;
+
+4 分鐘 curring-min
+color: #12a353;
+background-color: #d8ede1;

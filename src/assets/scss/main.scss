@@ -2,10 +2,20 @@
 @import "./helpers/_mixin.scss";
 @import "./helpers/_variables.scss";
 @import "./helpers/_font.scss";
+@import "./helpers/_animation.scss";
 
 @import "./views/_home.scss";
+@import "./views/_question.scss";
+@import "./views/_dynamics.scss";
 
 @import "./components/_header.scss";
 @import "./components/_side-panel.scss";
 @import "./components/_heading.scss";
 @import "./components/_features.scss";
+@import "./components/_footer.scss";
+@import "./components/_banner.scss";
+@import "./components/_answer.scss";
+@import "./components/_modal.scss";
+@import "./components/_query.scss";
+@import "./components/_scroll.scss";
+@import "./components/_countdown.scss";

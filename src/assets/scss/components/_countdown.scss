@@ -1,0 +1,33 @@
+.count {
+  position: fixed;
+  bottom: 130px;
+  right: 15px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $danger;
+  color: $white;
+  border-radius: 50px;
+  font-size: 12px;
+  z-index: 2;
+  @include sm {
+    bottom: 130px;
+    right: 15px;
+    width: 95px;
+    height: 95px;
+    font-size: 16px;
+  }
+  p:first-of-type {
+    margin-bottom: 5px;
+  }
+  strong {
+    font-weight: bold;
+    font-size: 16px;
+    @include sm {
+      font-size: 20px;
+    }
+  }
+}

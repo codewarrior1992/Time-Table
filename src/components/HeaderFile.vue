@@ -9,20 +9,15 @@ const openMenu = () => {
 
 onMounted(() => {
   const header = document.getElementsByTagName("header")[0];
-
-  window.onscroll = function () {
-    scrollFunction();
-  };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+  window.addEventListener("scroll", () => {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
       header.style.padding = "8px 0";
       header.classList.add("active");
     } else {
       header.style.padding = "24px 0";
       header.classList.remove("active");
     }
-  }
+  });
 });
 </script>
 <template>

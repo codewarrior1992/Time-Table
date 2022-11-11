@@ -2,7 +2,10 @@
 import { toRefs } from "vue";
 const props = defineProps(["img", "main", "sub"]);
 const { img, main, sub } = toRefs(props);
-const photo = new URL(`../assets/image/${img.value}.png`, import.meta.url).href;
+const photo = new URL(
+  `../assets/image/service/${img.value}.png`,
+  import.meta.url
+).href;
 </script>
 <template>
   <div class="feature">

@@ -17,6 +17,11 @@ app.provide("emitter", emitter);
 import VueEasyLightbox from "vue-easy-lightbox";
 app.use(VueEasyLightbox);
 
+// loading
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+app.component("LoadingEffect", Loading);
+
 app.use(createPinia());
 app.use(router);
 

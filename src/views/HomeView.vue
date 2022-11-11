@@ -1,27 +1,47 @@
 <!-- eslint-disable no-undef -->
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+
 import Heading from "../components/HeadingFile.vue";
 import Feature from "../components/FeaturesFile.vue";
-import VueEasyLightbox from "vue-easy-lightbox";
-const cover = new URL(`../assets/image/home.jpg`, import.meta.url).href;
+const pageCover =
+  "https://raw.githubusercontent.com/codewarrior1992/Time-Table/master/src/assets/image/banner/home.jpg";
 
 const visibleRef = ref(false);
 const indexRef = ref(0);
-const imgsRef = ref([]);
+const imgsRef = ref([
+  "https://raw.githubusercontent.com/codewarrior1992/Time-Table/master/src/assets/image/gallery/1.jpg",
+  "https://raw.githubusercontent.com/codewarrior1992/Time-Table/master/src/assets/image/gallery/2.jpg",
+  "https://raw.githubusercontent.com/codewarrior1992/Time-Table/master/src/assets/image/gallery/3.jpg",
+  "https://raw.githubusercontent.com/codewarrior1992/Time-Table/master/src/assets/image/gallery/4.jpg",
+]);
+const showSingle = (photo) => {
+  imgsRef.value = photo;
+  onShow();
+};
+const onShow = () => {
+  visibleRef.value = true;
+};
+const onHide = () => (visibleRef.value = false);
+const photos = [...imgsRef.value];
 
-const photos = [1, 2, 3, 4].map(
-  (photo) =>
-    new URL(`../assets/image/gallery/${photo}.jpg`, import.meta.url).href
-);
-console.log(photos);
+const isLoading = ref(false);
+onMounted(() => {
+  isLoading.value = true;
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 700);
+});
 </script>
 
 <template>
   <div class="home">
+    <LoadingEffect v-model:active="isLoading"> </LoadingEffect>
+
+    <!-- 1. Page Cover -->
     <section
       class="cover"
-      :style="{ 'background-image': 'url(' + cover + ')' }"
+      :style="{ 'background-image': 'url(' + pageCover + ')' }"
     >
       <div class="text">
         <h1>TAIWAN BUS TIMETABLE</h1>
@@ -29,9 +49,13 @@ console.log(photos);
         <button type="button">立即體驗</button>
       </div>
     </section>
+
+    <!-- 2. Bus Photo -->
     <section class="bus">
       <img src="../assets/image/bus.png" alt="" />
     </section>
+
+    <!-- 3. Introduce -->
     <section class="intro">
       <Heading
         main="WELCOME"
@@ -63,6 +87,8 @@ console.log(photos);
         </li>
       </ul>
     </section>
+
+    <!-- 4. Gallery -->
     <section class="gallery">
       <Heading
         main="GALLERY"
@@ -70,18 +96,20 @@ console.log(photos);
         slogan="我們的服務您放心，用心記錄與您互動的美好瞬間"
       >
       </Heading>
-      <!--  -->
       <vue-easy-lightbox
         :visible="visibleRef"
         :imgs="imgsRef"
         :index="indexRef"
         @hide="onHide"
-      ></vue-easy-lightbox>
-      <!--  -->
+      >
+      </vue-easy-lightbox>
       <ul class="photo-list">
-        <li v-for="(photo, i) in photos" :key="i" @click="showSingle(i)">
-          <img :src="photo" alt="" />
-        </li>
+        <li
+          v-for="(photo, i) in photos"
+          :key="i"
+          :style="{ 'background-image': 'url(' + photo + ')' }"
+          @click="showSingle(photo)"
+        ></li>
       </ul>
     </section>
   </div>

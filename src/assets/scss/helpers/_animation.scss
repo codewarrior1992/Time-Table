@@ -1,0 +1,28 @@
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes round-pulse {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(150%);
+  }
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: 0.3s all ease;
+}

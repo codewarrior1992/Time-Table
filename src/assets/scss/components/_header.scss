@@ -4,15 +4,13 @@ header {
   transition: 0.3s all ease;
   position: fixed;
   width: 100%;
+  padding: 24px 0;
   &.active {
     background-color: rgba(2, 11, 18, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0 0 10px rgb(4 7 14 / 80%);
   }
   @include xs {
-  }
-  @include sm {
-    width: 100%;
   }
   nav {
     position: relative;
