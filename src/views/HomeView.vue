@@ -1,6 +1,7 @@
 <!-- eslint-disable no-undef -->
 <script setup>
 import { onMounted, ref } from "vue";
+import { RouterLink } from "vue-router";
 
 import Heading from "../components/HeadingFile.vue";
 import Feature from "../components/FeaturesFile.vue";
@@ -46,7 +47,7 @@ onMounted(() => {
       <div class="text">
         <h1>TAIWAN BUS TIMETABLE</h1>
         <h2>全台公車動態時刻查詢應用服務</h2>
-        <button type="button">立即體驗</button>
+        <router-link to="/dynamics" class="link">立即體驗</router-link>
       </div>
     </section>
 

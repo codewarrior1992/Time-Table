@@ -14,9 +14,19 @@ emitter.on("openMenu", (value) => {
       close
     </span>
     <ul>
-      <li><RouterLink to="/">首頁</RouterLink></li>
-      <li><RouterLink to="/dynamics">公車動態</RouterLink></li>
-      <li><RouterLink to="/question">常見問題</RouterLink></li>
+      <li>
+        <RouterLink to="/" @click="isOpen = !isOpen">首頁</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/dynamics" @click="isOpen = !isOpen"
+          >公車動態
+        </RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/question" @click="isOpen = !isOpen"
+          >常見問題
+        </RouterLink>
+      </li>
     </ul>
   </section>
 </template>

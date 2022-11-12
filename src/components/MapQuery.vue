@@ -179,7 +179,6 @@ const dataProcessing = async () => {
 const setIntervalAndGetData = () => {
   countID.value = setInterval(() => {
     dataProcessing();
-    console.log("當前的", countID.value);
   }, 1000 * 30);
 };
 
@@ -295,7 +294,7 @@ onBeforeUnmount(() => {
         <a
           href="#"
           class="forward"
-          :class="{ active: true }"
+          :class="{ active: currentDirection == 0 }"
           @click.prevent="chooseDirection(0)"
         >
           <span>去程</span>
@@ -304,7 +303,7 @@ onBeforeUnmount(() => {
         <a
           href="#"
           class="backward"
-          :class="{ active: false }"
+          :class="{ active: currentDirection == 1 }"
           @click.prevent="chooseDirection(1)"
         >
           <span>回程</span>
