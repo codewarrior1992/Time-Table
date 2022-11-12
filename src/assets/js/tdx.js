@@ -5,9 +5,9 @@ import Cookies from "js-cookie";
 export const getAuthToken = async () => {
   if (Cookies.get("TDX_Auth_Token") == undefined) {
     const parameter = {
-      grant_type: "client_credentials",
-      client_id: "varok1992417-f451a119-32c5-4b56",
-      client_secret: "19255cc6-9ce3-4881-8794-a7d107cf3051",
+      grant_type: import.meta.env.GRANT_TYPE,
+      client_id: import.meta.env.CLIENT_ID,
+      client_secret: import.meta.env.CLIENT_SECRET,
     };
 
     const auth_url =
