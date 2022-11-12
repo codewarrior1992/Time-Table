@@ -40,7 +40,7 @@ export const getRoutes = async (city) => {
   return response.data;
 };
 
-// [縣市、路線] 取得到站時間
+// [縣市、路線] 取得車輛到站時間
 export const getEstimatedTime = async (city, route) => {
   const url = `https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/${city}/${route}?&%24format=JSON`;
   const config = {
@@ -50,7 +50,7 @@ export const getEstimatedTime = async (city, route) => {
   return response.data;
 };
 
-// [縣市、路線] 取得座標
+// [縣市、路線] 取得站點座標
 export const getStopOfRoute = async (city, route) => {
   const url = `https://tdx.transportdata.tw/api/basic/v2/Bus/StopOfRoute/City/${city}/${route}?%24format=JSON`;
   const config = {
