@@ -5,11 +5,10 @@ import Cookies from "js-cookie";
 export const getAuthToken = async () => {
   if (Cookies.get("TDX_Auth_Token") == undefined) {
     const parameter = {
-      grant_type: import.meta.env.GRANT_TYPE,
-      client_id: import.meta.env.CLIENT_ID,
-      client_secret: import.meta.env.CLIENT_SECRET,
+      grant_type: import.meta.env.VITE_GRANT_TYPE,
+      client_id: import.meta.env.VITE_CLIENT_ID,
+      client_secret: import.meta.env.VITE_CLIENT_SECRET,
     };
-
     const auth_url =
       "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token";
 
