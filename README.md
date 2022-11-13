@@ -14,4 +14,4 @@
 * 公車到站時刻
 * 公車站序公車
 * 公車地圖模式
-* 支援 RWD 響應式網站 iPad Mini iPhone、12 Pro 等解析度
+* 支援 RWD 響應式網站 iPad Mini、iPhone 12 Pro 等解析度
